@@ -1,8 +1,10 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
+import './src/lib/env'
 
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
-};
+  reactStrictMode: true,
+}
 
-export default nextConfig;
+export default nextConfig

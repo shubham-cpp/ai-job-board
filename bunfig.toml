@@ -1,0 +1,7 @@
+telemetry = false
+
+[install]
+# Only install package versions published at least 3 days ago
+minimumReleaseAge = 432000
+# minimumReleaseAgeExcludes = []
+exact = true
