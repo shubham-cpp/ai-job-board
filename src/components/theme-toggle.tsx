@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
 function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme: theme, setTheme } = useTheme()
   const isDark = theme === 'dark'
   const [mounted, setMounted] = useState(false)
 
@@ -25,7 +25,7 @@ function ThemeToggle() {
       className={`
         relative flex h-8 w-14 items-center rounded-full transition-colors
         duration-300
-        ${isDark ? 'bg-neutral-700' : 'bg-yellow-200'
+            ${isDark ? 'bg-neutral-700' : 'bg-yellow-200'
     }
       `}
       title={`Switch to ${isDark ? 'light' : 'dark'} mode`}

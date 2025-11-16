@@ -1,7 +1,7 @@
 'use client'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@ui/avatar'
-import { Button } from '@ui/button'
+import { Button, buttonVariants } from '@ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from '@ui/dropdown-menu'
 import { UserIcon } from 'lucide-react'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import SignOutButton from '@/app/(auth)/_components/sign-out-button'
 // import { UserProfileDialog } from "./user-profile-dialog";
@@ -28,8 +29,7 @@ function UserNavDropdown() {
   const user = session.data?.user
 
   // const [dialogOpen, setDialogOpen] = useState(false);
-
-  if (!user || ['/login', '/sign-up'].includes(path))
+  if (['/login', '/sign-up'].includes(path))
     return null
 
   if (isLoading) {
@@ -40,6 +40,10 @@ function UserNavDropdown() {
       </div>
     )
   }
+
+  if (!user)
+    return <Link href="/login" className={buttonVariants({ variant: 'ghost' })}>Sign In</Link>
+
   return (
     <>
       {/* <UserProfileDialog open={dialogOpen} onOpenChange={setDialogOpen} /> */}
