@@ -29,7 +29,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         className={`
           ${fontSans.variable}
           ${fontMono.variable}
-          grid min-h-screen grid-rows-[auto_1fr] antialiased
+          grid min-h-screen grid-rows-[auto_1fr] font-sans antialiased
         `}
       >
         <AppProvider>

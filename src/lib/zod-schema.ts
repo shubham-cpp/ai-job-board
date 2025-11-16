@@ -1,5 +1,23 @@
 import { z } from 'zod/v4-mini'
 
+export const wageIntervals = ['hourly', 'monthly', 'yearly'] as const
+export type WageInterval = (typeof wageIntervals)[number]
+
+export const locationRequirements = ['hybrid', 'in-office', 'remote'] as const
+export type LocationRequirement = (typeof locationRequirements)[number]
+
+export const experienceLevels = ['entry', 'junior', 'semi-senior', 'senior', 'lead', 'architect'] as const
+export type ExperienceLevel = (typeof experienceLevels)[number]
+
+export const jobStatuses = ['draft', 'delisted', 'published'] as const
+export type JobStatus = (typeof jobStatuses)[number]
+
+export const jobTypes = ['internship', 'part-time', 'full-time'] as const
+export type JobType = (typeof jobTypes)[number]
+
+export const jobApplicationStages = ['applied', 'denied', 'interested', 'interviewed', 'hired'] as const
+export type JobApplicationStage = (typeof jobApplicationStages)[number]
+
 export const loginSchema = z.object({
   email: z.email('Enter a valid email.').check(z.trim()),
   password: z

@@ -7,8 +7,8 @@ const envSchema = z.object({
   BETTER_AUTH_SECRET: z.string().check(z.minLength(3)),
   BETTER_AUTH_URL: z.url('Invalid better-auth url.'),
 
-  GOOGLE_CLIENT_ID: z.string(),
-  GOOGLE_CLIENT_SECRET: z.string(),
+  AUTH_GOOGLE_CLIENT_ID: z.string(),
+  AUTH_GOOGLE_CLIENT_SECRET: z.string(),
 })
 
 // eslint-disable-next-line node/prefer-global/process
